@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0f2">
+  <meta name="description" content="Sebuah ruang kecil penuh kenangan dan rasa sayang, dibuat khusus untuk seseorang yang istimewa.">
+  <title>A Little Universe for You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="floating-hearts" id="floatingHearts" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Kembali ke beranda"><span>♡</span> my little universe</a>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a class="active" href="#home">Beranda</a>
+      <a href="#memories">My Love</a>
+      <a href="#reasons">Alasan Sayang</a>
+      <a href="#surprise">Kejutan</a>
+    </nav>
+    <a class="header-heart" href="#letter" aria-label="Buka surat cinta">♡</a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> a little page made with love</p>
+        <h1>Untuk kamu,<br><em id="heroName"></em> <span class="title-heart">♥</span></h1>
+        <p class="hero-description">Sebuah halaman kecil yang aku buat khusus untukmu. Tempat menyimpan cerita, kenangan, dan semua hal sederhana yang membuatku bersyukur mengenalmu.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#memories">Lihat kenangan <span>♡</span></a>
+          <button class="button button-soft" id="heroLetterButton" type="button">Ada surat untukmu ✉</button>
+        </div>
+        <div class="tiny-note"><span>✦</span> dibuat dengan banyak rasa sayang <span>✦</span></div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <span class="deco-heart deco-heart-one">♡</span>
+        <span class="deco-heart deco-heart-two">♥</span>
+        <div class="hero-photo polaroid">
+          <div class="photo-tape"></div>
+          <img src="assets/foto-utama.webp" alt="Foto kesayangan" fetchpriority="high">
+          <div class="polaroid-caption">my favorite person ♡</div>
+        </div>
+        <div class="sticker-note">
+          <span>♡ cantik</span>
+          <span>♡ baik</span>
+          <span>♡ lucu</span>
+          <span>♡ rumah ternyaman</span>
+        </div>
+        <div class="sparkle sparkle-a">✦</div>
+        <div class="sparkle sparkle-b">✧</div>
+      </div>
+    </section>
+
+    <section class="quick-cards section-wrap" aria-label="Halaman spesial">
+      <article class="music-card glass-card">
+        <div class="vinyl-wrap">
+          <div class="vinyl"><div class="vinyl-center">♡</div></div>
+          <div class="album-art">our<br>song</div>
+        </div>
+        <div class="music-info">
+          <p class="card-kicker">a song for you</p>
+          <h2>Putar lagu kita <span>♫</span></h2>
+          <p id="musicStatus">Pilih lagu yang mengingatkanmu pada kita.</p>
+          <div class="music-progress"><span id="musicProgress"></span></div>
+          <div class="music-times"><span id="musicCurrent">0:00</span><span id="musicDuration">0:00</span></div>
+          <div class="music-controls">
+            <button class="round-control" id="chooseSong" type="button" title="Pilih file musik" aria-label="Pilih file musik">＋</button>
+            <button class="play-control" id="playMusic" type="button" aria-label="Putar musik">▶</button>
+            <button class="round-control" id="muteMusic" type="button" title="Senyapkan musik" aria-label="Senyapkan musik">♪</button>
+          </div>
+          <input id="songFile" type="file" accept="audio/*" hidden>
+          <audio id="loveAudio" preload="metadata"></audio>
+        </div>
+      </article>
+
+      <article class="letter-teaser glass-card" id="letter">
+        <div class="letter-stamp">♡</div>
+        <div class="envelope-art"><span>♡</span></div>
+        <div class="letter-content">
+          <p class="card-kicker">a little message</p>
+          <h2>Surat kecil untukmu</h2>
+          <p>Ada beberapa kata dari hati yang ingin akusampaikan. Buka kalau kamu punya waktu sebentar, ya.</p>
+          <button class="button button-primary" id="openLetter" type="button">Buka surat cinta <span>↗</span></button>
+        </div>
+      </article>
+    </section>
+
+    <section class="memories section-wrap" id="memories">
+      <div class="section-heading">
+        <p class="eyebrow">little moments, big feelings</p>
+        <h2>the most  <em>beautiful girl</em> <span>♡</span></h2>
+        <p>Setiap foto punya ceritanya sendiri. Dan entah bagaimana, semuanya selalu berhasil bikin aku tersenyum.</p>
+      </div>
+      <div class="memory-grid">
+        <button class="memory-photo memory-large" type="button" data-full="assets/foto-utama.webp">
+          <img src="assets/foto-utama.webp" alt="Foto kenangan satu" loading="lazy">
+          <span class="photo-label">a pretty smile ♡</span>
+        </button>
+        <button class="memory-photo memory-tall" type="button" data-full="assets/kenangan-1.webp">
+          <img src="assets/kenangan-1.webp" alt="Kolase foto kenangan" loading="lazy">
+          <span class="photo-label">your little poses</span>
+        </button>
+        <button class="memory-photo" type="button" data-full="assets/kenangan-2.webp">
+          <img src="assets/kenangan-2.webp" alt="Foto jalan-jalan" loading="lazy">
+          <span class="photo-label">a lovely day</span>
+        </button>
+        <button class="memory-photo" type="button" data-full="assets/kenangan-3.webp">
+          <img src="assets/kenangan-3.webp" alt="Kolase foto tersenyum" loading="lazy">
+          <span class="photo-label">my favorite view</span>
+        </button>
+        <button class="memory-photo memory-wide" type="button" data-full="assets/kenangan-4.webp">
+          <img src="assets/kenangan-4.webp" alt="Foto kenangan tambahan" loading="lazy">
+          <span class="photo-label">always you ♡</span>
+        </button>
+      </div>
+      <p class="gallery-hint">ketuk fotonya untuk melihat lebih dekat ✧</p>
+    </section>
+
+    <section class="love-lower section-wrap">
+      <article class="reasons-card paper-card" id="reasons">
+        <div class="paper-pin">♡</div>
+        <p class="eyebrow">a hundred little things</p>
+        <h2>100 alasan<br><em>aku sayang kamu</em></h2>
+        <p class="reasons-intro">Mungkin satu alasan tidak akan pernah cukup untuk menjelaskan semuanya. Jadi, ini satu per satu hal yang aku suka dari kamu.</p>
+        <div class="reason-display">
+          <span class="reason-number" id="reasonNumber">01 / 100</span>
+          <p id="reasonText">Karena kamu adalah kamu, dan itu sudah lebih dari cukup.</p>
+        </div>
+        <div class="reason-actions">
+          <button class="button button-primary" id="nextReason" type="button">Alasan berikutnya ♡</button>
+          <button class="text-button" id="randomReason" type="button">acak alasan ↗</button>
+        </div>
+      </article>
+
+      <article class="counter-card glass-card">
+        <p class="eyebrow">every second is special</p>
+        <h2>Sejak kamu <em>hadir</em> ♡</h2>
+        <p class="counter-subtitle">Waktu berjalan, dan aku masih bersyukur ada kamu.</p>
+        <div class="counter-grid" aria-live="polite">
+          <div class="counter-unit"><strong id="countDays">—</strong><span>hari</span></div>
+          <div class="counter-unit"><strong id="countHours">—</strong><span>jam</span></div>
+          <div class="counter-unit"><strong id="countMinutes">—</strong><span>menit</span></div>
+          <div class="counter-unit"><strong id="countSeconds">—</strong><span>detik</span></div>
+        </div>
+        <p class="counter-footnote" id="counterNote">♡</p>
+        <div class="counter-scribble">terima kasih sudah menjadi bagian dari ceritaku ♡</div>
+      </article>
+    </section>
+
+    <section class="surprise-section section-wrap" id="surprise">
+      <div class="gift-illustration" aria-hidden="true">
+        <div class="gift-box"><span>♡</span></div>
+        <div class="gift-bow"></div>
+      </div>
+      <div class="surprise-copy">
+        <p class="eyebrow">one last little thing</p>
+        <h2>Ada kejutan <em>untukmu</em>!</h2>
+        <p>Karena kamu pantas mendapatkan hal-hal manis, bahkan dari halaman kecil ini.</p>
+        <button class="button button-primary surprise-button" id="surpriseButton" type="button">Buka kejutanmu <span>🎁</span></button>
+      </div>
+      <span class="surprise-star star-left">✧</span>
+      <span class="surprise-star star-right">✦</span>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>made with <span>♥</span> by <strong id="senderFooter">someone who adores you</strong></p>
+    <p class="footer-small">semoga kamu selalu menemukan alasan untuk tersenyum ♡</p>
+  </footer>
+
+  <dialog class="modal" id="letterModal">
+    <button class="modal-close" data-close="letterModal" aria-label="Tutup">×</button>
+    <div class="modal-icon">💌</div>
+    <p class="eyebrow">a letter from my heart</p>
+    <h2 id="letterTitle">Untuk kamu, Kamelia Ratna Dewi  </h2>
+    <div class="letter-message" id="letterMessage"></div>
+    <p class="modal-signature">with all my love, <span id="letterSender">AQIL</span> ♡</p>
+  </dialog>
+
+  <dialog class="modal surprise-modal" id="surpriseModal">
+    <button class="modal-close" data-close="surpriseModal" aria-label="Tutup">×</button>
+    <div class="surprise-big-heart">♥</div>
+    <p class="eyebrow">surprise, my love!</p>
+    <h2>Kamu itu hadiah<br><em>terindah</em> buat aku.</h2>
+    <p class="surprise-message">Kalau aku bisa memilih satu hal untuk diulang berkali-kali, aku akan tetap memilih kesempatan untuk mengenal kamu. Terima kasih sudah hadir. Jangan lupa bahagia, ya. Aku sayang kamu! ♡</p>
+    <button class="button button-primary" data-close="surpriseModal" type="button">Aku juga sayang kamu ♡</button>
+  </dialog>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lightbox-close" data-close="lightbox" aria-label="Tutup foto">×</button>
+    <img id="lightboxImage" src="" alt="Foto kenangan ukuran besar">
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
